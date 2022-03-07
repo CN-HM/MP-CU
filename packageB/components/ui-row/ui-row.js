@@ -33,7 +33,7 @@ Component({
         },
         //对齐方向
         align: {
-            optionalTypes: String,
+            type: String,
             value: ''
         },
     },

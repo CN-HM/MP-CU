@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "fixed-tools" : "/packageB/components/fixed-tools/fixed-tools"
+    "ui-fixed-tools" : "/packageB/components/ui-fixed-tools/ui-fixed-tools"
   }
 }

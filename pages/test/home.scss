@@ -7,6 +7,20 @@
         border-radius: 24rpx;
         display: flex;
         z-index: 2;
+        &:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba( 255, 255, 255, 0.1 );
+            backdrop-filter: blur( 20px );
+            -webkit-backdrop-filter: blur( 20px );
+            border-radius: 24rpx;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            z-index: -1;
+        }
         .left-view {
             position: relative;
             height: 202rpx;
@@ -65,6 +79,19 @@
         border-radius: 24rpx;
         padding: 30rpx;
         height: 260rpx;
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba( 255, 255, 255, 0.1 );
+            backdrop-filter: blur( 20px );
+            -webkit-backdrop-filter: blur( 20px );
+            border-radius: 24rpx;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
         .content {
             position: relative;
             height: 100%;

@@ -65,7 +65,11 @@
                 "list/old-list/index",
                 "fixed-tools/index",
                 "dot-tag/dot-tag",
-                "layout/layout"
+                "layout/layout",
+                "stepper/stepper",
+                "notify/notify",
+                "divider/divider",
+                "search-bar/search-bar"
             ]
         }
     ],

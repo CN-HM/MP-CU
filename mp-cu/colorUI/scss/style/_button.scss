@@ -69,11 +69,12 @@
         display: block;
         font-size: 32rpx;
     }
-
+    &:not([disabled]):not(.none-style):active {
+        transform: translate(.5px, .5px);
+    }
     &[disabled] {
         opacity: 0.6;
     }
-
     &.none-style {
         background-color: transparent !important;
         position: absolute;

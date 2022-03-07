@@ -3,10 +3,10 @@
         <view class="page-body-main">
             <app-navbar navBg="{{navBg}}" title="{{title}}" wx:if="{{title}}" />
             <slot></slot>
-            <app-footer wx:if="{{($cuConfig.footer && footer) || (!$cuConfig.footer && footer)}}" />
+            <app-footer wx:if="{{isFooter}}" />
             <ui-tabbar ui="shadow border-top" datas="{{$cuConfig.tabBar}}" cur="{{tabBarIndex}}" wx:if="{{tabbar}}" />
             <view class="loading-body bg-blur" wx:if="{{isLoading}}">
-                <view class="_icon-loading icon-spin text-sl mb-3" />
+                <view class="{{loadingIcon}} icon-spin text-sl mb-3"/>
                 <view>加载中</view>
             </view>
         </view>

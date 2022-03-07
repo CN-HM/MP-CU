@@ -1,6 +1,6 @@
 # MP CU
 
-<p><a href="https://mp.color-ui.com/update/">更新日志(Beta V3.2.9)</a> | <a href="https://mp.color-ui.com/">在线文档</a>（完善中...）</p>
+<p><a href="https://mp.color-ui.com/update/">更新日志(Beta V3.3.1)</a> | <a href="https://mp.color-ui.com/">在线文档</a></p>
 
 <img width="120px" src="https://github.com/iZaiZaiA/iZaiZaiA/blob/img/mp-cu/mp-cu.jpg" />
 
@@ -53,13 +53,13 @@
 
 ### 框架配置
 
-您可单独设置一个 `config.js` 里面配置相关信息，然后暴露方法给 `app.js` 在全局引用
+您可单独设置一个 `config.js` 里面配置相关信息，然后暴露方法给 `app.js` 在全局引用，默认在 `config/ColorUI.js`
 
 ```javascript
 
-import { ColorUi } from './config'
-App({  
-    ColorUi,        //挂载到app上，此步骤必须要有！
+import { colorUI } from './config/ColorUI'
+App({
+    colorUI,        //挂载到app上，此步骤必须要有！
     onLaunch() {
         
     }
@@ -84,13 +84,13 @@ App({
 相关文件路径：
 
 ```
-
+/config        // (MP-CU配置文件)
 /mp-cu         // ColorUi主框架的文件夹，不建议修改这里面的文件，以免后续升级时，被覆盖。
 /mp-sdk        // ColorUi框架的辅助文件夹，封装了一些常用的方法函数、扩展图标库等，按需使用，如不需要，可删除此文件夹。
 /packageA      // 项目演示demo的分包，此包为模板包路径
 /packageB      // 项目演示demo的分包，此包为实验室包路径
    ...
-/config.js     // 框架的配置项，建议在此文件中配置，后续更新升级时，不会被覆盖
+/config.js     // 框架的配置项，(新版本中，已移除该文件)
 
 ```
 
@@ -117,7 +117,7 @@ App({
 > 由于微信小程序无法使用vue.key来全局命名变量，导致习惯vue的用户很不习惯，而且微信内部并不存在像vuex这样的状态管理机制，为满足上述想法，colorUI  MP-CU 为您定制了一套自有的扩展包，你可以在全局导入变量、函数、方法，同时您也可以定义您自己的状态（` vuex `）.
 
 
-- colorUI 的配置文件需要您定义成类似以下的内容，参考 `/config.js` 文件。
+- colorUI 的配置文件需要您定义成类似以下的内容，参考 `config/ColorUI.js` 文件。
 
 ```javascript
 

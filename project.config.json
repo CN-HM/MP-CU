@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -45,8 +45,8 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.19.6",
-  "appid": "",
-  "projectname": "MP%20CU",
+  "appid": "wx021a1b8ecfa78ba5",
+  "projectname": "MP-CU",
   "debugOptions": {
     "hidedInDevtools": []
   },

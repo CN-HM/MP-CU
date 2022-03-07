@@ -7,29 +7,29 @@
         <view class="m-2 img-dot-tag">
             <ui-img ui="radius border" src="{{imgA}}"/>
 
-            <dot-tag name="ColorUI" ui="dot-tag-right" animation right bind:tagTap="tapDotTag"/>
+            <ui-dot-tag name="ColorUI" ui="dot-tag-right" animation right bind:tagTap="tapDotTag"/>
 
-            <dot-tag ui="dot-tag-bottom" animation bottom bind:tagTap="tapDotTag">
+            <ui-dot-tag ui="dot-tag-bottom" animation bottom bind:tagTap="tapDotTag">
                 <text class="cicon-creative"/>
                 <text class="ml-2">加点图标</text>
-            </dot-tag>
+            </ui-dot-tag>
 
-            <dot-tag name="组件库" ui="dot-tag-top" animation top bind:tagTap="tapDotTag"/>
+            <ui-dot-tag name="组件库" ui="dot-tag-top" animation top bind:tagTap="tapDotTag"/>
 
-            <dot-tag name="MP-CU" ui="dot-tag-left" animation left bind:tagTap="tapDotTag"/>
+            <ui-dot-tag name="MP-CU" ui="dot-tag-left" animation left bind:tagTap="tapDotTag"/>
         </view>
 
         <ui-title title="尺寸" depth="2" ui="m-2 mt-5" isIcon/>
         <view class="m-2 img-dot-tag">
             <ui-img ui="radius border" src="{{imgB}}"/>
 
-            <dot-tag name="组件库" ui="dot-tag-right lg" animation right/>
+            <ui-dot-tag name="组件库" ui="dot-tag-right lg" animation right/>
 
-            <dot-tag name="点标签点标签" ui="dot-tag-bottom xxl" animation bottom/>
+            <ui-dot-tag name="点标签点标签" ui="dot-tag-bottom xxl" animation bottom/>
 
-            <dot-tag name="MP-CU" ui="dot-tag-top" animation top/>
+            <ui-dot-tag name="MP-CU" ui="dot-tag-top" animation top/>
 
-            <dot-tag name="ColorUI" ui="dot-tag-left sm" animation left/>
+            <ui-dot-tag name="ColorUI" ui="dot-tag-left sm" animation left/>
         </view>
 
         <ui-title title="拖动" depth="2" ui="m-2 mt-5" isIcon/>
@@ -40,7 +40,7 @@
             <movable-area style="width: 100%; height: 154px;">
                 <ui-img ui="radius border" src="{{imgC}}"/>
                 <movable-view x="{{x}}" y="{{y}}" direction="all" style="height: auto;width: auto;" bindchange="movableChange">
-                    <dot-tag name="拖动" animation right/>
+                    <ui-dot-tag name="拖动" animation right/>
                 </movable-view>
             </movable-area>
         </view>
@@ -50,7 +50,7 @@
 
         <view class="m-2 img-dot-tag">
             <ui-img ui="radius border" src="{{imgD}}"/>
-            <dot-tag name="坐标" x="{{x}}" y="{{y}}" dot="1" animation right/>
+            <ui-dot-tag name="坐标" x="{{x}}" y="{{y}}" dot="1" animation right/>
         </view>
 
     </view>

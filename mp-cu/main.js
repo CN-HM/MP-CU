@@ -4,7 +4,7 @@ import { CUStoreInit } from '/store/index'
  * @author iZaiZaiA (https://github.com/iZaiZaiA)
  */
 
-let version = '3.2.8';
+let version = '3.3.1';
 
 let store = {}, sys_info = wx.getSystemInfoSync();
 let baseMethod = {
@@ -184,10 +184,8 @@ export default class ColorUI {
         config.theme = config.theme||'auto'
         config.main = config.main||'blue'
         config.text = config.text||1
-        config.footer = config.footer||true
         config.homePath = config.homePath||'/pages/index/index'
         config.tabBar = config.tabBar||[]
-        config.share = config.share||false
         config.shareTitle = config.shareTitle||''
         //处理数据
         this.config = config

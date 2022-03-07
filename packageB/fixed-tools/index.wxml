@@ -31,6 +31,6 @@
             </view>
         </view>
 
-        <fixed-tools data="{{list}}" isIcon="{{isIcon}}" scrollTop="{{scrollTop}}" bind:tapBar="tapToolsBar"/>
+        <ui-fixed-tools data="{{list}}" isIcon="{{isIcon}}" scrollTop="{{scrollTop}}" bind:tapBar="tapToolsBar"/>
     </view>
 </ui-sys>

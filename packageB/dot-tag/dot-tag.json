@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "dot-tag" : "/packageB/components/dot-tag/dot-tag"
+    "ui-dot-tag" : "/packageB/components/ui-dot-tag/ui-dot-tag"
   }
 }

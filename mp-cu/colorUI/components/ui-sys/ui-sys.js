@@ -2,6 +2,7 @@ Component({
     data: {
         isLoading: false,
         tabBarIndex: 0,
+        isFooter: false,
     },
     options: {
         addGlobalClass: true,
@@ -42,46 +43,75 @@ Component({
         },
         footer: {
             type: Boolean,
-            value: true
+            value: ''
+        },
+        loadingIcon: {
+            type: String,
+            value: '_icon-loading'
         },
     },
     lifetimes: {
-        ready() {
-            let {tabbar, loading} = this.data;
-            if (tabbar) {
-                wx.hideTabBar();
-                this._onPage();
-            }
-            this.setData({isLoading: loading})
+        created() {
             this.setLoading();
+        },
+        attached() {
+            let loading = this.data.loading;
+            this.setData({isLoading: loading});
+        },
+        ready() {
+            this.setTabBar();
+            this.setFooterShow();
         },
     },
     observers: {
-        'tabbar'(val) {
-            if (val) {
-                wx.hideTabBar();
-            }
+        'tabbar'() {
+            this.setTabBar();
         },
         'loading'(val) {
             this.setData({isLoading: val})
             this.setLoading();
         },
+        'footer'() {
+            this.setFooterShow();
+        },
     },
     methods: {
+        setTabBar() {
+            let tabBar = this.data.tabbar;
+            if (tabBar) {
+                wx.hideTabBar();
+                this._onPage();
+            }
+        },
+        setFooterShow() {
+            let footer = this.data.footer;
+            let cuFooter = this.data.$cuConfig.footer;
+            let isFooter = cuFooter;
+            if (footer === '') {
+                isFooter = cuFooter;
+            } else {
+                isFooter = footer;
+            }
+            this.setData({isFooter: isFooter})
+        },
         _onPage() {
-            let _this = this;
             let page = getCurrentPages();
-            let url = page[page.length - 1].route
-            this.data.$cuConfig.tabBar.map((item,index)=>{
-                if(item.url === '/'+url) {
-                    _this.setData({tabBarIndex: index})
-                }
-            })
+            if (page.length > 0) {
+                let _this = this, tabBar = this.data.$cuConfig.tabBar;
+                let url = page[page.length - 1].route
+                tabBar.map((item,index)=>{
+                    if(item.url === '/' + url) {
+                        _this.setData({tabBarIndex: index})
+                    }
+                })
+            } else {
+                this.setData({tabBarIndex: 0})
+            }
         },
         setLoading() {
-            let _this = this;
+            let _this = this, loading = this.data.loading;
             setTimeout(() => {
-                if (_this.data.loading === 'auto') {
+                if (loading === 'auto') {
                     _this.setData({isLoading: false})
                 }
             }, 800);
